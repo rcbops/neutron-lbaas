@@ -49,3 +49,27 @@ class MisMatchedKey(TLSException):
 
 class CertificateStorageException(TLSException):
     message = _LE('Could not store certificate: %(msg)s')
+
+
+class BadRequestException(exceptions.BadRequest):
+    message = "%(fault_string)s"
+
+
+class ConflictException(exceptions.Conflict):
+    message = "%(fault_string)s"
+
+
+class NotAuthorizedException(exceptions.NotAuthorized):
+    message = "%(fault_string)s"
+
+
+class NotFoundException(exceptions.NotFound):
+    message = "%(fault_string)s"
+
+
+class ServiceUnavailableException(exceptions.ServiceUnavailable):
+    message = "%(fault_string)s"
+
+
+class UnknownException(exceptions.NeutronException):
+    message = "%(fault_string)s"
